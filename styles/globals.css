@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+  .markdown p {
+    @apply mt-3 leading-normal first:mt-0 dark:text-neutral-300;
+  }
+  .markdown ol {
+    @apply flex flex-col gap-5 pl-4 my-3 list-decimal;
+  }
+  .markdown ul {
+    @apply flex flex-col gap-5 pl-4 my-3 list-disc;
+  }
+  .markdown h2 {
+    @apply mt-4 mb-2 text-2xl font-semibold;
+  }
+  .markdown h3 {
+    @apply mt-4 mb-2 text-xl font-semibold;
+  }
+  .markdown h4 {
+    @apply mt-4 mb-2 text-lg font-medium;
+  }
+  .markdown h5 {
+    @apply mt-4 mb-2 text-base font-medium;
+  }
+  .markdown table {
+    @apply w-full my-6 overflow-hidden text-left rounded-md table-auto;
+  }
+  .markdown table thead {
+    @apply text-sm font-medium uppercase border-b border-neutral-200 dark:border-neutral-400 bg-neutral-50 dark:bg-neutral-700;
+  }
+  .markdown table thead th {
+    @apply px-4 py-3;
+  }
+  .markdown table tbody tr {
+    @apply text-sm border-b dark:border-neutral-600 border-neutral-300 last:border-none even:bg-neutral-100 odd:bg-neutral-200 even:dark:bg-neutral-700 odd:dark:bg-neutral-800;
+  }
+
+  .markdown table tbody tr td {
+    @apply px-4 py-3;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
