@@ -71,9 +71,22 @@ const Step3 = () => {
             animate={!handling ? "animate" : "initial"}
             className="w-full max-w-3xl"
           >
-            <div className="mb-4 max-w-fit rounded-md border px-3 py-2 text-sm font-bold dark:border-white/10 dark:bg-white/5">
-              Post
-            </div>
+            {/* Copy to Clipboard Button */}
+            <Button
+                onClick={() => {
+                  if (post.title && post.content) {
+                    const blogContent = `${post.title}\n\n${post.content}`;
+                    navigator.clipboard.writeText(blogContent).then(() => {
+                      // Do something after content is copied
+                    });
+                  }
+                }}
+                variant="outline"
+                className={`mb-8 w-full ${(!post.title || !post.content) ? 'cursor-not-allowed opacity-50' : ''}`}
+                disabled={!post.title || !post.content}
+              >
+                Copy to Clipboard
+              </Button>
             <div>
               <h1 className="mb-10 text-2xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
                 {post.title}
