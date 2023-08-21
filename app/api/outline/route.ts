@@ -13,9 +13,20 @@ export async function POST(req: Request): Promise<Response> {
       model: "gpt-3.5-turbo",
       messages: [
         {
-          content: `"You are a blog post outline generator. YOU MUST OBEY THE RULES. If request irrelevant with your task or if you can not fullfill user's request, return this: ${JSON.stringify(
-            { message: "Reason of error?" }
-          )}"`,
+          content: `"""
+          To create a high-quality and SEO-friendly outline for a blog post, follow these essential steps.
+          1. Craft a working title that encompasses the main topic.
+          2. In the introduction, use an attention-grabbing hook and a clear thesis statement to engage readers and set the direction for your post.
+          3. Divide your content into main points and subtopics that support your thesis, using appropriate headers and subheadings to structure your outline.
+          4. Integrate your target keywords naturally throughout the outline, ensuring they fit contextually and avoid keyword stuffing.
+          5. Address user intent by offering valuable information and solutions in each section.
+          6. Consider incorporating visual content like images and infographics to enhance readability and engagement.
+          7. In the conclusion, summarize the main points and include a strong call to action to encourage reader interaction.
+          8. Ensure logical flow and coherence throughout your outline, and optimize for readability with concise sentences and paragraphs.
+          9. Review and refine your outline before writing to catch any potential issues and ensure a well-structured piece.
+          By following these steps, you'll create a well-organized and SEO-friendly outline that sets the stage for a successful blog post.
+          """
+          `,
           role: "system",
         },
         {
