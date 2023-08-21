@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/site-footer"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
               <div className="flex-1">{children}</div>
+              <Footer />
             </div>
           </ThemeProvider>
         </body>

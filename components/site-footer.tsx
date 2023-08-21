@@ -1,9 +1,13 @@
-export function SiteFooter() {
+import React from 'react';
+
+const Footer = () => {
   return (
-    <footer className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        made with love by Ahmed Oublihi
+    <footer className="bg-gray-900 p-8 text-white dark:bg-gray-800">
+      <div className="container mx-auto text-center">
+        <p>&copy; {new Date().getFullYear()} Blog Genius. Made with ❤️ By Ahmed</p>
       </div>
     </footer>
-  )
-}
+  );
+};
+
+export default Footer;
