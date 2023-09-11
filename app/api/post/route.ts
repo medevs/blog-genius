@@ -13,9 +13,7 @@ export async function POST(req: Request): Promise<Response> {
       model: "gpt-3.5-turbo",
       messages: [
         {
-          content: `"You are a blog post generator. Generate blog post based on the outline provided by user. YOU MUST OBEY THE RULES. ALWAYS RETURN IN MARKDOWN. USE H2 and H3 TITLES. USE TABLES IF YOU NEED. USE CODE BLOCKS IF YOU NEED. USE EVERY TITLE, HEADING and SUBHEAEDING FROM OUTLINE. USE NUMBERS OR LETTERS IN HEADINGS. EACH SUBHEADING MUST HAVE A DEDICATED PARAGRAPH. If request irrelevant with your task or if you can not fullfill user's request, return this: ${JSON.stringify(
-            { message: "Reason of error?" }
-          )}"`,
+          content: "Generate the body of a blog post based on the provided title and outline. Ensure the content is informative, engaging, and well-structured. Use proper headings (H2 and H3) for each section. Incorporate relevant information and insights from the outline. Avoid duplicating information in the title or outline. If the request is irrelevant or if you encounter any issues, return an appropriate error message.",
           role: "system",
         },
         {
