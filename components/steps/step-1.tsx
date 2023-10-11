@@ -56,7 +56,7 @@ const Step1 = () => {
               setInputValue(e.target.value)
             }}
             className="w-full text-base"
-            placeholder="A blog post about Marina..."
+            placeholder="A blog post about Space..."
             ref={inputRef}
           />
           <Button type="submit" className="w-full">

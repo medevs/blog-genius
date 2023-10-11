@@ -10,9 +10,9 @@ const HeroSection: React.FC = () => {
         <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
           Turn your ideas into engaging blog posts in just a few simple steps.
         </p>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0">
           <div className="flex items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-bold text-blue-500 dark:bg-gray-800">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold text-blue-500 dark:bg-gray-800 sm:h-16 sm:w-16 sm:text-2xl">
               1
             </div>
             <div className="ml-4">
@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-bold text-blue-500 dark:bg-gray-800">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold text-blue-500 dark:bg-gray-800 sm:h-16 sm:w-16 sm:text-2xl">
               2
             </div>
             <div className="ml-4">
@@ -32,7 +32,7 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-bold text-blue-500 dark:bg-gray-800">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold text-blue-500 dark:bg-gray-800 sm:h-16 sm:w-16 sm:text-2xl">
               3
             </div>
             <div className="ml-4">
@@ -44,6 +44,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
     </section>
+
   )
 }
 

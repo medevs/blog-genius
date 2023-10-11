@@ -4,6 +4,12 @@ import { OpenAIStream } from "@/lib/openai"
 
 export const runtime = "edge"
 
+/**
+ * Handles a POST request and generates a blog post based on the provided title and outline.
+ * 
+ * @param req - The incoming request object.
+ * @returns A response object containing the generated blog post content as a readable stream.
+ */
 export async function POST(req: Request): Promise<Response> {
   const { request } = await req.json()
   try {

@@ -4,6 +4,14 @@ import { OpenAIStream } from "@/lib/openai"
 
 export const runtime = "edge"
 
+/**
+ * Handles a POST request by generating an outline for a blog post based on user input.
+ * 
+ * @param req - The incoming request object containing the user's request.
+ * @returns A Promise that resolves to the stream of responses from the OpenAIStream function.
+ * 
+ * @throws If there is an error in processing the request, a 500 status response with an error message is returned.
+ */
 export async function POST(req: Request): Promise<Response> {
   const { request } = await req.json()
 

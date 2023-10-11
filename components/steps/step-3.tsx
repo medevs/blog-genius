@@ -13,6 +13,7 @@ import { useAtom, useAtomValue } from "jotai"
 import Post from "../post/post"
 import { Button } from "../ui/button"
 import Spinner from "../ui/spinner"
+import { useState } from "react"
 
 const containerVariants = {
   initial: {
@@ -41,6 +42,24 @@ const Step3 = () => {
       setPost({ title: "", content: "" })
     }, 500)
   }
+  const [copied, setCopied] = useState(false);
+  const [notificationVisible, setNotificationVisible] = useState(false);
+
+  const handleCopyToClipboard = () => {
+    if (post.title && post.content) {
+      const blogContent = `${post.title}\n\n${post.content}`;
+      navigator.clipboard.writeText(blogContent).then(() => {
+        setCopied(true);
+
+        // Show the notification for a few seconds
+        setNotificationVisible(true);
+        setTimeout(() => {
+          setNotificationVisible(false);
+        }, 3000); // Adjust the timeout as needed
+      });
+    }
+  };
+
   return (
     <motion.div
       variants={containerVariants}
@@ -73,20 +92,18 @@ const Step3 = () => {
           >
             {/* Copy to Clipboard Button */}
             <Button
-                onClick={() => {
-                  if (post.title && post.content) {
-                    const blogContent = `${post.title}\n\n${post.content}`;
-                    navigator.clipboard.writeText(blogContent).then(() => {
-                      // Do something after content is copied
-                    });
-                  }
-                }}
-                variant="outline"
-                className={`mb-8 w-full ${(!post.title || !post.content) ? 'cursor-not-allowed opacity-50' : ''}`}
-                disabled={!post.title || !post.content}
-              >
-                Copy to Clipboard
-              </Button>
+              onClick={handleCopyToClipboard}
+              variant="outline"
+              className={`mb-8 w-full ${(!post.title || !post.content) ? 'cursor-not-allowed opacity-50' : ''}`}
+              disabled={!post.title || !post.content}
+            >
+              Copy to Clipboard
+            </Button>
+            {copied && notificationVisible && 
+              <div className="fixed bottom-10 left-1/2 z-50 -translate-x-1/2 rounded-md bg-green-500 px-4 py-2 text-center text-white transition-all duration-500">
+                Content copied to clipboard!
+              </div>
+            }
             <div>
               <h1 className="mb-10 text-2xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
                 {post.title}
